@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+  <p>Nhập cân nặng: (kg)</p>
+  <input type="text" id="n1">
+  <p>Nhập chiều cao: (m)</p>
+  <input type="text" id="n2">
+  <p><input type="button" onclick="bt()" value="Kiểm tra"></p>
+    <p id="result"></p>
+<script>
+    function bt() {
+        let weight = document.getElementById("n1").value;
+        let height = document.getElementById("n2").value;
+        let bmi = weight / (height * height);
+        if (bmi < 18) {
+            result = "Nhẹ cân";
+        } else if (bmi < 25.0) {
+            result = "Bình thường";
+        } else if (bmi < 30.0) {
+            result = "Thần cưa";
+        } else
+            result = "Béo đẹp";
+            document.getElementById("result").innerHTML = "Chỉ số BMI của bạn là : " + bmi + result;
+    }
+</script>
+</form>
+</body>
+</html>
